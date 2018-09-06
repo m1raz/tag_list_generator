@@ -27,7 +27,7 @@
 	</body>
 	<script>
 		let send;
-		Dropzone.options.imageDropzone = 
+		Dropzone.options.imageDropzone =
 		{
 			maxFiles : 1,
 			thumbnailWidth : 1000,
@@ -37,14 +37,14 @@
 		$("#tags").focus();
 		let user_input;
 		let tag_complition;
-		$('#tags').bind('input', function() 
-		{ 
-			var jqxhr = $.post( 
+		$('#tags').bind('input', function()
+		{
+			var jqxhr = $.post(
 				"ajax/find_tag.php" ,
-				{ 
-					tags : $("#tags").val() 
+				{
+					tags : $("#tags").val()
 				},
-				function( data ) 
+				function( data )
 				{
 					user_input = $("#tags").val();
 					tag_complition = data;
@@ -53,8 +53,8 @@
 				}
 			);
 		});
-		
-		$('#tags').on('keypress', function (e) 
+
+		$('#tags').on('keypress', function (e)
 		{
 			if(e.which === 13)
 			{
