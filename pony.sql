@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2018 at 12:48 PM
+-- Generation Time: Sep 07, 2018 at 02:35 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -968,6 +968,7 @@ INSERT INTO `tags` (`id`, `tag`) VALUES
 (743, 'Spearhead\r'),
 (910, 'Special_Delivery\r'),
 (1196, 'Spellbound\r'),
+(1265, 'Spike'),
 (911, 'Spiral_Notepad\r'),
 (751, 'Spitfire\r'),
 (31, 'Spoiled_Rich\r'),
@@ -1222,6 +1223,28 @@ INSERT INTO `tags_tagsgroup` (`tags_id`, `tagsGroup_id`) VALUES
 (1, 671),
 (1, 1264);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `pwd_sha` varchar(500) NOT NULL,
+  `banned` tinyint(1) NOT NULL,
+  `level` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `email`, `name`, `pwd_sha`, `banned`, `level`) VALUES
+(1, 'ncunskis@gmail.com', 'Nikita Cunskis', 'nikus', 0, 0);
+
 --
 -- Indexes for dumped tables
 --
@@ -1240,6 +1263,12 @@ ALTER TABLE `tagsgroup`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -1247,13 +1276,19 @@ ALTER TABLE `tagsgroup`
 -- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1265;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1270;
 
 --
 -- AUTO_INCREMENT for table `tagsgroup`
 --
 ALTER TABLE `tagsgroup`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
