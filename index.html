@@ -16,66 +16,44 @@
 		</style>
 	</head>
 	<body>
-		<form action="ajax/upload.php" class="dropzone"id="image-dropzone"></form>
-		<div id="image"></div>
 		<div class="form-group">
-			 <label for="tags">Tags:</label>
-			 <input type="text" class="form-control" id="tags">
+			<label for="email">Email address:</label>
+			<input type="email" class="form-control" id="email">
 		</div>
-		<div id="result"></div>
-		<div id="tags_form"></div>
+		<div class="form-group">
+			<label for="pwd">Password:</label>
+			<input type="password" class="form-control" id="pwd">
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox"> Remember me</label>
+		</div>
+		<button type="submit" class="btn btn-default" onclick="login();">Submit</button>
 	</body>
 	<script>
-		Dropzone.options.imageDropzone = 
+		function login()
 		{
-			maxFiles : 1,
-			thumbnailWidth : 1000,
-			thumbnailHeight : 1000,
-			thumbnailMethod : 'contain'
-		}
-		$("#tags").focus();
-		let user_input;
-		let tag_complition;
-		$('#tags').bind('input', function() 
-		{ 
-			var jqxhr = $.post( 
-				"ajax/find_tag.php" ,
+			$.post( 
+				"ajax/login.php" ,
 				{ 
-					tags : $("#tags").val() 
+					email : $("#email").val(),
+					pwd : $("#pwd").val()
 				},
 				function( data ) 
 				{
-					user_input = $("#tags").val();
-					tag_complition = data;
-					let text = $("#tags").val() + data;
-					$("#result").html( text );
+					$("body").html( data );
 				}
 			);
-		});
-		
-		$('#tags').on(
-		    'keypress',
-			function (e)
-			{
-				if(e.which === 13 )
+		}
+		function openPony()
+		{
+			$.post
+			(
+				"createPost.php" ,
+				function( data )
 				{
-					$(this).attr("disabled", "disabled");
-					$("#tags_form").append( " #" + $("#result").text() );
-					$("#tags").val("");
-					$("#result").text("");
-					$(this).removeAttr("disabled");
-					$("#tags").focus();
+					$("body").html( data );
 				}
-			}
-		);
-		$('#tags').on(
-		    'keyup',
-			function (e)
-			{
-                if (e.keyCode == 27) {
-                    $("#result").text($("#tags").val());
-                }
-        	}
-        );
+			);
+		}
 	</script>
 </html>
