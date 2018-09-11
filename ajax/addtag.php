@@ -1,18 +1,5 @@
 <?php
-	
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "pony";
-
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-
-	// Check connection
-	if ($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
-	}
-	
+    include '../conf/db.php';
 	$tag = $_POST["tag"];
 	$tag = str_replace(" ", "_", $tag);
 	$tag = str_replace(".", "", $tag);

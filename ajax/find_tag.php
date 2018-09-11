@@ -1,21 +1,6 @@
 <?php
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "pony";
-
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-
-	// Check connection
-	if ($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
-	}
-	
+	include '../conf/db.php';
 	$tags = $_POST["tags"];
-	
-	
-	
 	if(strlen($tags) > 1)
 	{
 		$sql = "SELECT * FROM tagsgroup WHERE name = '$tags'";
@@ -25,7 +10,7 @@
 			while($row = $result->fetch_assoc())
 			{
 				$groupid = $row['id'];
-				$sql = "SELECT * FROM `tags_tagsgroup` WHERE tags_id = $groupid";
+				$sql = "SELECT * FROM `tags_tagsgroup` WHERE tags_id = $groupid ORDER BY `order` ASC";
 				$result = $conn->query($sql);
 				if($result->num_rows > 0)
 				{
