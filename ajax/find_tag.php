@@ -42,7 +42,7 @@
 			}
 			else
 			{
-				echo "You got unique tag! Do you want to <button type='button' class='btn btn-primary' onclick='createTag();'>add it to base</button>?";
+				echo "You got unique tag! Do you want to <button type='button' class='btn btn-primary' onclick='createTag();'> add it to base</button>?";
 			}
 		}
 	}
