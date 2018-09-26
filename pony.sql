@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 07, 2018 at 02:35 PM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- Хост: 127.0.0.1
+-- Время создания: Сен 26 2018 г., 19:32
+-- Версия сервера: 10.1.32-MariaDB
+-- Версия PHP: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,56 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pony`
+-- База данных: `pony`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tags`
+-- Структура таблицы `login`
+--
+
+CREATE TABLE `login` (
+  `id` int(11) NOT NULL,
+  `uid` int(11) NOT NULL,
+  `session_key` varchar(500) NOT NULL,
+  `start` datetime DEFAULT NULL,
+  `end` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `login`
+--
+
+INSERT INTO `login` (`id`, `uid`, `session_key`, `start`, `end`) VALUES
+(1, 1, 'qwerty', '2018-09-08 01:08:05', '2018-09-09 01:08:05'),
+(2, 1, 'sss', '2018-09-08 01:21:08', '2018-09-09 01:21:08'),
+(3, 1, 'I&d0wWqT1$/Xb40n*;][sD@w16=^=3Emv%,[]eHr-w5?V6?jxp7-KRIrj2)b.mRjV|3/O5eHW?SV[@mmAbyY9F9ymS^WA{k(cT=FGH^[e2c4;AB/$VWx{&j;V^mGWBRJX4^jB9?GRB=p33{:/3KfXC.Db885|#0WLI+.li8tn,mMKw{IO@;o@$=Q_*]JwE+MpMF/*q1LBm{%:pth}}+^\\_0.cQB:*lm^7}bEQe+=Cnb8g*1qgpkY9#Zsp3L,|!}6:Y,2(?rx|2h|?PRxn/Fj|H/]XJ|/U4[f5]).J[KUWM%2QQJNpaGA@}?,14YLO3h8d*1Y,*/AhZQ03NS)w:158PB2agOe?p*!5q/:b]0azk&5F7pL9sdsDbb(S0D7e=d9(1uLRl+n!6xTcn-/wC]SzqJm06b.wp$]^rp7eJ9{T-$KL9bp64hVIC0jDlgdCv|.pg(YUxQZ}*,-=}a?j+fuSPVbGeK.&o_qA4mxFsO%,-:I|e9P3', '2018-09-08 01:24:59', '2018-09-09 01:24:59'),
+(4, 1, 'aH=|8Flr3qYj0IOIqHr1#P8_?y_9m,!d@nbJ7=N1v?9i|b*XF|k+aMxF6.+Y$8gZvXzaslM9b#!)sBtp:q:XTb;*E)v,B#dFE}b7I&7-42L{7;crJE:GRs1{k2A(tST%1@PILL1Cu7@VT3t#mSGJ*yeV/QGO^k5&h*FZQ2.3p-$D!Tm}[a3&F)i0u2nS*})_0X)-7zSJmSKZ}J:?C@gs*=[oLf]HQ5P%w[CN&s@+|R@ar51SZ*r]m)=,4aZ4=gz6d}uCz@EbdC@y|QpWmk=6)#VJE@ni5cU)kd[$9c068&-+k7JO_yu$XX;uKR$w|QA7&pmZ*ON008+3nPwBT/!0{;x+3ha=Tc_-{8UkJdl=?--[PpOLS}SIWhRP:kUk?1PQ8[5Up6?T|9UdF/4*I5I8qcD0*96e&FT/!wrV^:c]z_)$RVM8=0qq(%RxIj+.v(CL+?iPLu6!]M:i:m=!h)P%SKt=grudfU#y/4/p;tlVtXkPx@W|', '2018-09-08 01:25:48', '2018-09-09 01:25:48'),
+(5, 1, ';pSyz)DVp*DQSt(/}M.$6VgiatKo#95elF,S|}&OuHIuzYZHc]|BICz;ws[*Nv4E9u(VZ+[0f8.zHNESmmreZ)@u;kmgJ44UP7yPcFF-YXg|#lTMLr|ldT3Q,Oip[AJRNna8vG,RD@}27?BUS=!W@xo7A!h*K_$jY*E!*X(gm8Ov+YF?*TL_wu!-gqK[}#ph9Qls:A;9EN8V9GHDz#EP[nD%LF@QB8;!S!;,)dPn$ELyHUkaXG!b=]GWAmKpb6l#Lp)$]XX&s5UGDWQtC+hh!U},jK%0Tb[SO:xqXw[W^:bH*2U8]3vIcReB67DmVn$&e:t=?WGXMf7WY.{.-,Pl9OmGOGU@.Y_8/m5}I}q1dUtuR3[vKo%wepn{P]-^exC_s]TbSP=^NAk|@yrOX7DOb#my.;9{Q;q%Y*87wOnJA@kGVa1jZ2b1{OGXI:!#vlSG}P^KO*!2!W[t=StB:a)r:C?ZZ)TEvq}me:VU!kZUHKAiBdc.Yyq', '2018-09-09 10:28:36', '2018-09-09 10:55:43'),
+(6, 1, 'P])QL662+Z+IW^69taa8RL,4L;L_yAvQF=A:AyVACI1-uGQQg#,)Uw1|USLnP:8P^VQMs+jZd0_8i!VsS9DTa,h8S6v*5LS8]#N*Uh$h;&i!RjjUSj];)8wKpNs*bkde)Fu4C]FXP,;H2GowRQy4O^fi*QP+Aj[ls|$GX=RB$&lgKzgkAK.ah)XDV2BnMb]7gwtAYBLIq@a_tu0j[i/FjBW6oY;C=9HXjd(%3R?3^6lR;Rg@.wD6(vGxqWcLv2_{gCf7Lpj6cU^-_qyTO=#x}:cYFbtl[3febB*Vw8H{JZ|6n_$CgJ@J^gfWnOq{-:BET(L(BYhI6w#oqb@C!#zI|Yx:r3rLYY384ighRM-aD?/QURu};dqg1p*!=_f(X4f5i=y6M&VQoXMncKa{:^l{@%^Z-COAL}Xbn_t:E]JzBY2).zIOAP)dKYTrlh|Ib,Im1Y=1QgA7;3Kv=^lYpaF9#)hP#a#|x$%uvmmCIfq/BgQcQ80', '2018-09-09 11:31:47', '2018-09-09 12:19:58'),
+(7, 1, 'f|eUf0mTcYOo#?Oo1fSiAoEou]Sw:nJ0&E9vgPA4j^i?o06SO,dEg)VdX8|H@4rIHd+H_3y0Ccu;KRv=qY3/#9XhEs{h@/Oc|azG^ZbK1FV&E$d#FVZ*Yti8$qpa-}18$o)HG+-%=^1b{A?LBY!Vm#NpjhUEG{8tOh&$gaR8lP{#{{FSxK]?l(Z[Oj8KN;oubCP}t;Vu?6Z0j9R_3q?1;UZ+GXCH/{r3)@%8r/wuDyh}tqtK1w*N86|X_OP4c0bD34/ZC@qh09(!i{JRT$v_C[,8x!&zshMIkMOH2em@55.!UR!s,3[hWxAIs)D+t#]7IgPg?W|}dGGy_Elif=WUH=W:.dwgK/W6_mUEVU7B:9u2[T$)R%C#[:7&80N?qQ|soS.lm6&)W[|X8XHh{Km,.n:M6|_!x(o0:KoM*Lqs6Pp@()^F0ki-&7=k6/}%h&\npz$wpBLIFp:/Pf}_a-2U^7w]uQ#2L[Fx??O|NklP2;$t&O', '2018-09-09 12:20:13', '2018-09-09 22:17:04'),
+(8, 2, '%d?M;82QPmNs;t2D5uTmiR.pE$W,Kv+CMX8Pu#Z0Re:=]9|1(F$Q}7/&bk+-0js)}oK%,+?HyV]*6%&&[8bo!UnVu[7om1/UTmY4RF@^c^vIa*+/NR3kjUXcBA2**YQ!Gx9mBwhJ[c4A6A=G%P[5D1]MuzeBw13#5&a)$/aBdMXZ;bg12zT#mgrN%95q6xkgRF{.N73VI{Zx]9zylJp?9De.9pSSEgxVJq;F@Wex@xC:&jeFOIx1fOAg#3qBUPdGbnsCD7X5B&Ea*v/wys-22cEK:Oe2|V8.^NNQ33,0$9}(!#$K)(Bl(gz_?1@7rjikK!nPT.J@8{C6F%pSbk+Mxy[kEEs;dO{guT#/pcME4w7^]qBSGJS$N7)^pU5Skx$Nh1hO^WGk{&8J?(=MfR+:t^M/&OYSUF6{{qI]3g/5zEG#&IIsWxAmMX_7J0aSf=]j]%z7esq|;h!2Llmqk?B!#ZI3-gK*y]g}/lEy#iU7p5', '2018-09-09 22:17:14', '2018-09-10 22:17:14'),
+(9, 2, 'T{$%UyclO/ZNgWd9@tre:!3-8sO|.mPUx}=&LTwZi+3uC6YcVY9{mc^Gc^*.MFy7B8M68@5*?#R%3Uw9vQM(VUmz0gXa|.n_rNrr|YPd&(Z-WA4mtG#.qgIW1w#&N[B-EF5^F/o3o#02zVfkWdq=komC66MCDznvj/R%@u2uRph{LY/x2M!@D&]MA3O.%rpZrx#T00Q6.21KmHeZun)UfuM=n6Y^4e,D;XFD7A6C}pw)LWe(js@=ZKw]T3G8XJ#&40PvXHymU[CphDAfRe1qgn=7#WSg)$B_}=d;/tgp$!DEKB3d!i:$$$ask@gytwd]Bl%?F}s72B_0LU7C?#%21kCzv}e6/Dz6RI_yn_o(?J3]fG$z!uDEV#1=3w)s5P6]?1T[*=1LksSB6ZN0@Gf}J_oQ$JR?l=:/sF?sZ.0dxAY4Ie*%UCP6ff:f,NJz?Msi.&OvnYj+ACiSxn%[])%EKt9r=dJZL2G7!-}1WF#rm)Dav|K', '2018-09-09 22:19:24', '2018-09-10 22:19:24'),
+(10, 2, 'G$G9XaHvKdUGwlTo5W%p6C/[xLf8zGoiR:l9,}k@%GK@^@slY3lO?Db51931{EeF&@+kywCXAUm!$kY$*&lHgJDm85}0|j!r4q;.[aI8xU|jgV,_K*vKXrZ3d!kp9nyBG@L{L%;H+2MNed%DUhSgjbzBLAyz.aXCZ:Ugr&,!(eb,i*tSh6AUymLFOH%Ru(Z27TLUa[9zv8Q5OB2O=0N+M,RRWrF#!O,g/{bwA3!:R@gXVUoanfl{Vr@ShKGiB(m$}8?5JE,/rS^sg^.G1H85s(,0Mek@FOcxf[{VxB0plDA,+9Nn@!crNw[R$h8u)vG55UWGvKY5z}:^o@z_X9fo.I,3L@@Df7@$7WdVxsKV?E;ct-3o43/6L{N7-[Y=7N-0B&[9}]kMwg&bac&Jh^rMiVEUIj5CO;^;ryIl:Xief@Y2+hX.+S@Hbxcjkh%azS@@=VP53.b]axAM$qF4](lB/oqbRZX#[L[EnKx[5o[/]y&mWJG', '2018-09-12 19:59:37', '2018-09-13 19:59:37'),
+(11, 1, '@g7[Ms@?NG,hRtJ^@.]BKcv4JHfrHCLD2Hx%m#*eA2|)w-lZZ:cB4LA1m8/G|[zOE(-zzsG]EEa3u}IHkjlPcW-1C&z.Yjicp=JJ]x/tO=hNfJ[Af$3?|VixfP9+9T-I87n-F_:]f}pJ1AnrSJvh4jyfOg!LvTzB|!]KNM:9xi=BXn/VuY$N[T-x7mAAm20|H!hEP)]ul93nOMO%rHXru=+?u:/!qIy9f7u1^[uCXwKYDHR!)5PW#}xWjZT/SyZI7Ci3(u9[B19qtllR:TMrW/_@)0U|(QaaiPu^CMM$lp7q/4.3w7.m(mdNEg4(eX6%VRrv81Fu!a0vTV8p;-|0lp(XmsCxhfsQMcNeM_[|_d-%Zx3}l-rDo-GNumLpM@1Qgvk]@RkeE2]^KC)+cy1nIN0eb-,SPUl6e).r!&WF0uR3/Vmcl;f/f=mJ1976,-l4&JtRI=m-#n(RfL+VubULeG[(BSaztH9y?0&:E*+}@)jhGO=', '2018-09-24 04:42:06', '2018-09-25 04:42:06'),
+(12, 2, 'RZnR#l@Iljx1{kRU*CzM,Wch{is)jwMI56VPKjPK?udI{5W5:,(!Gscz8F^TNm{oWK}|v!w/Z2&!rY&SSw6S0fdL[[tg*G4Ln=${(I)86=!UU=_n8H7FB3E]ZRix5=B(M1^?4.8n|LzYlnv)ay8Q8DY$-a)H85)i#:N3vG|Y^py&L2r8vdA[tGD7bSIC8/T_]JhS9gB2_}pw|*6)mZP2)u@@2xb#|wvjq$%xk]BF:[2FZl72snsmP/tROEf4Cm@L6P|,kpz&JT}k=tkIen^ZAal|6zm(E%*wjp(3%N@5)srz!Y{lCEgn5+&9vM%DY62Y[qc:(2dU0rRXhgsh=f{dWRNnZzqd!tCUO9i*Q4;=9[P,hDaJq-(P/|x!/@[yW8K6=t2ws;Inl!oSPYb;8m=di#(6/o31Pt!*I}{J{Y4;%X9|tK}/P;ff&lFqQy8bqaDv]%PxZ$h)L17BkU%8[Z7LP*W#3c79,+$UgMZvdv7YzYn?#Q', '2018-09-24 04:42:47', '2018-09-25 04:42:47'),
+(13, 2, '1:TZZGr$l-6Bc!o}6RHYmSnauDq5mLx6U+oNPd&ltYuEs*W{M#Y,%*13R=V;a;X/YG9g,tL5W	-uYkHb:MJh|(?{*B=&E,e/8c2=5dE5]5(*|$1!|}[@S8sNvg/T6b8Y%n1{UP+b\0xveVZ;ECD?//R[Q_n]zwX(*S6b2)II?S@TbGM:T@hE,eN}f-){3hptP_k8d?lQBCI[k@xr=cw+NvV{z+?Il^,qyJL8Q5HUMk$Pv7G{8},w+#E[Ad3QNO_Ij@)oKqS?Fq{-H;NJAsliV2;rw@QOYL3AD0W^D3c|9Nr5&je[Q8}!5!atn^di&8X-ik1jhFsEf}X,]drf0losyY}|uLZ_.q$h%qi7vRMrrp@98Z4K1M,uWDVH1$.dP%Slht9o!+7,:?[uv)Z98$wFDI#7+.ho:xYg/y*ik]xheU&w_phu!H/Ai$qM]pLDmf3P%KyAw[S9GR%.5qBQ@HZ.@AhAhr;&;jO?.)AVMv#6-RS', '2018-09-24 04:42:54', '2018-09-25 04:42:54');
+
+--
+-- Триггеры `login`
+--
+DELIMITER $$
+CREATE TRIGGER `set_end_time` BEFORE INSERT ON `login` FOR EACH ROW SET
+    NEW.start = IFNULL(NEW.start, NOW()),
+    NEW.end = TIMESTAMPADD(DAY, 1, NEW.start)
+$$
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `tags`
 --
 
 CREATE TABLE `tags` (
@@ -34,13 +77,15 @@ CREATE TABLE `tags` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tags`
+-- Дамп данных таблицы `tags`
 --
 
 INSERT INTO `tags` (`id`, `tag`) VALUES
+(1272, '#Scootaloo_'),
 (810, 'Abradacanter\r'),
 (391, 'Ace_Point\r'),
 (1032, 'Acrylic_Paint\r'),
+(1269, 'Adagio_Dazzle'),
 (392, 'Adante\r'),
 (393, 'Affero\r'),
 (1255, 'Alicorn_royal_guards\r'),
@@ -166,6 +211,7 @@ INSERT INTO `tags` (`id`, `tag`) VALUES
 (1173, 'Bookstore_Pony_1\r'),
 (279, 'Bookstore_Pony_2\r'),
 (173, 'Bottlecap\r'),
+(1275, 'Boulder'),
 (629, 'Bowling_Pony\r'),
 (713, 'Bow_Hothoof\r'),
 (979, 'Bracer_Britches\r'),
@@ -425,6 +471,7 @@ INSERT INTO `tags` (`id`, `tag`) VALUES
 (1093, 'Gary_Coronet\r'),
 (465, 'George_Horrsen\r'),
 (848, 'Geronimo\r'),
+(1274, 'Gilda'),
 (470, 'Gingerbread\r'),
 (467, 'Ginger_Beard\r'),
 (469, 'Ginger_Locks\r'),
@@ -899,6 +946,7 @@ INSERT INTO `tags` (`id`, `tag`) VALUES
 (334, 'Savannah_Guthrie\r'),
 (584, 'Savoir_Fare\r'),
 (1188, 'Say_Cheese\r'),
+(1273, 'Scootaloo_'),
 (898, 'Score\r'),
 (335, 'Screwball\r'),
 (336, 'Screwy\r'),
@@ -956,6 +1004,7 @@ INSERT INTO `tags` (`id`, `tag`) VALUES
 (346, 'Soigne_Folio\r'),
 (538, 'Soldier\r'),
 (740, 'Somnambula\r'),
+(1270, 'Sonata_Dusk'),
 (741, 'Songbird_Serenade\r'),
 (1219, 'Songbird_Serenade\'s_Agent\r'),
 (1221, 'Songbird_Serenade\'s_Bodyguard\r'),
@@ -1055,6 +1104,7 @@ INSERT INTO `tags` (`id`, `tag`) VALUES
 (610, 'Swanky_Hank\r'),
 (678, 'Swan_Song\r'),
 (364, 'Sweetberry\r'),
+(1267, 'Sweetie_Belle'),
 (365, 'Sweetie_Drops\r'),
 (1211, 'Sweet_Biscuit\r'),
 (927, 'Sweet_Buzz\r'),
@@ -1104,6 +1154,7 @@ INSERT INTO `tags` (`id`, `tag`) VALUES
 (617, 'Trendy_Coiffure\r'),
 (1193, 'Trendy_Photographer_Pony\r'),
 (1182, 'Trim_EEA_Official\r'),
+(1266, 'Trixie_Lulamoon'),
 (1216, 'Tropical_Dream\r'),
 (378, 'Tropical_Spring\r'),
 (933, 'Tropical_Storm\r'),
@@ -1139,6 +1190,7 @@ INSERT INTO `tags` (`id`, `tag`) VALUES
 (940, 'Velvet_Light\r'),
 (385, 'Vidala_Swoon\r'),
 (1220, 'Vinny\r'),
+(1268, 'Vinyl_Scratch'),
 (386, 'Viola\r'),
 (369, 'Violinist_Pony\r'),
 (639, 'Violist_Pony\r'),
@@ -1178,13 +1230,14 @@ INSERT INTO `tags` (`id`, `tag`) VALUES
 (39, 'Wrangler\r'),
 (709, 'Written_Script\r'),
 (641, 'Wylin_Slobinzki\r'),
+(1271, 'Zecora'),
 (748, 'Zephyr_Breeze\r'),
 (1023, 'Zesty_Gourmand\r');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tagsgroup`
+-- Структура таблицы `tagsgroup`
 --
 
 CREATE TABLE `tagsgroup` (
@@ -1193,102 +1246,134 @@ CREATE TABLE `tagsgroup` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tagsgroup`
+-- Дамп данных таблицы `tagsgroup`
 --
 
 INSERT INTO `tagsgroup` (`id`, `name`) VALUES
-(1, 'Main six');
+(1, 'Main six'),
+(2, 'Princess');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tags_tagsgroup`
+-- Структура таблицы `tags_tagsgroup`
 --
 
 CREATE TABLE `tags_tagsgroup` (
   `tags_id` int(11) NOT NULL,
-  `tagsGroup_id` int(11) NOT NULL
+  `tagsGroup_id` int(11) NOT NULL,
+  `order` int(11) NOT NULL,
+  `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tags_tagsgroup`
+-- Дамп данных таблицы `tags_tagsgroup`
 --
 
-INSERT INTO `tags_tagsgroup` (`tags_id`, `tagsGroup_id`) VALUES
-(1, 1),
-(1, 2),
-(1, 670),
-(1, 679),
-(1, 654),
-(1, 671),
-(1, 1264);
+INSERT INTO `tags_tagsgroup` (`tags_id`, `tagsGroup_id`, `order`, `id`) VALUES
+(1, 1, 3, 1),
+(1, 2, 2, 2),
+(1, 670, 4, 3),
+(1, 679, 1, 4),
+(1, 654, 5, 5),
+(1, 671, 6, 6),
+(1, 1264, 7, 7),
+(2, 1252, 1, 8),
+(2, 1253, 2, 9),
+(2, 1254, 3, 10),
+(2, 679, 4, 11);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Структура таблицы `user`
 --
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
   `name` varchar(20) NOT NULL,
-  `pwd_sha` varchar(500) NOT NULL,
+  `pwd` varchar(500) NOT NULL,
   `banned` tinyint(1) NOT NULL,
   `level` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `user`
+-- Дамп данных таблицы `user`
 --
 
-INSERT INTO `user` (`id`, `email`, `name`, `pwd_sha`, `banned`, `level`) VALUES
-(1, 'ncunskis@gmail.com', 'Nikita Cunskis', 'nikus', 0, 0);
+INSERT INTO `user` (`id`, `email`, `name`, `pwd`, `banned`, `level`) VALUES
+(1, 'ncunskis@gmail.com', 'Nikita Cunskis', 'nikus', 0, 0),
+(2, '123', 'Pnyuxa Epty', '123', 0, 10);
 
 --
--- Indexes for dumped tables
+-- Индексы сохранённых таблиц
 --
 
 --
--- Indexes for table `tags`
+-- Индексы таблицы `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `tags`
 --
 ALTER TABLE `tags`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `tag` (`tag`);
 
 --
--- Indexes for table `tagsgroup`
+-- Индексы таблицы `tagsgroup`
 --
 ALTER TABLE `tagsgroup`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Индексы таблицы `tags_tagsgroup`
+--
+ALTER TABLE `tags_tagsgroup`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT для сохранённых таблиц
 --
 
 --
--- AUTO_INCREMENT for table `tags`
+-- AUTO_INCREMENT для таблицы `login`
+--
+ALTER TABLE `login`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT для таблицы `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1270;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1276;
 
 --
--- AUTO_INCREMENT for table `tagsgroup`
+-- AUTO_INCREMENT для таблицы `tagsgroup`
 --
 ALTER TABLE `tagsgroup`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT для таблицы `tags_tagsgroup`
+--
+ALTER TABLE `tags_tagsgroup`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
