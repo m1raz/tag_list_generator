@@ -1,10 +1,5 @@
 <?php include 'profile.php' ?>
 <br>
-<!-- <form action="../ajax/upload.php" class="dropzone" id="image-dropzone"></form>
-<div id="image"></div>
-<div id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
-    <p>Drag one or more files to this Drop Zone ...</p>
-</div>-->
 <div class="form-group">
     <button class="btn btn-default" data-toggle="collapse" data-target="#howto">Документация</button>
 
@@ -91,13 +86,6 @@
 <div id="tags_form"></div>
 <div id="result"></div>
 <script>
-	Dropzone.options.imageDropzone = 
-	{
-		maxFiles : 1,
-		thumbnailWidth : 1000,
-		thumbnailHeight : 1000,
-		thumbnailMethod : 'contain'
-	}
 	$("#tags").focus();
 	let user_input;
 	let tag_complition;
@@ -164,50 +152,6 @@
 			}
 		);
 	}
-    function dropHandler(ev) {
-        console.log('File(s) dropped');
-
-        // Prevent default behavior (Prevent file from being opened)
-        ev.preventDefault();
-
-        if (ev.dataTransfer.items) {
-            // Use DataTransferItemList interface to access the file(s)
-            for (var i = 0; i < ev.dataTransfer.items.length; i++) {
-                // If dropped items aren't files, reject them
-                if (ev.dataTransfer.items[i].kind === 'file') {
-                    var file = ev.dataTransfer.items[i].getAsFile();
-                    console.log(file);
-                }
-            }
-        } else {
-            // Use DataTransfer interface to access the file(s)
-            for (var i = 0; i < ev.dataTransfer.files.length; i++) {
-                console.log('... file[' + i + '].name = ' + ev.dataTransfer.files[i].name);
-            }
-        }
-
-        // Pass event to removeDragData for cleanup
-        removeDragData(ev)
-    }
-
-    function dragOverHandler(ev) {
-        console.log('File(s) in drop zone');
-
-        // Prevent default behavior (Prevent file from being opened)
-        ev.preventDefault();
-    }
-
-    function removeDragData(ev) {
-        console.log('Removing drag data')
-
-        if (ev.dataTransfer.items) {
-            // Use DataTransferItemList interface to remove the drag data
-            ev.dataTransfer.items.clear();
-        } else {
-            // Use DataTransfer interface to remove the drag data
-            ev.dataTransfer.clearData();
-        }
-    }
     $('.addExample').click(function(){
         $('#tags').val(this.innerText);
         var jqxhr = $.post
@@ -224,10 +168,12 @@
             }
         );
     });
-
-    $('#googleit').click(function(){
-
-        let url = 'https://www.google.com/search?q=' + document.getElementById('tags').value;
-        window.open(url,'_blank');
-    });
+    $('#googleit').click
+    (
+        function()
+        {
+            let url = 'https://www.google.com/search?q=' + document.getElementById('tags').value;
+            window.open(url,'_blank');
+        }
+    );
 </script>
